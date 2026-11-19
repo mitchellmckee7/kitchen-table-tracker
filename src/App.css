@@ -1,0 +1,15 @@
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.pie-chart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #4e79a7 0% 40%,    /* Slice 1: 40% */
+    #f28e2c 40% 70%,   /* Slice 2: 30% (40% + 30% = 70%) */
+    #e15759 70% 100% 
+  );
+}
