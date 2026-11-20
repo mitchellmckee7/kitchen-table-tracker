@@ -1,34 +1,32 @@
 import { useState } from 'react'
 import './App.css'
+import Pie from './components/Pie';
+import Legend from './components/Legend'
 
 function App() {
-  const [value, setValue] = useState(50);
+  const [value, setValue] = useState(30);
 
   return (
     <>
-        <section className='header'>
-          <div className='center'>
-            <h1>Kitchen Table Tracker</h1>
-            <p>
-              A tracking app for your very own Commander meta for Magic: The Gathering
-            </p>
-
-          </div>
-        </section>
         <section className='body'>
-          <div className='center'>
-              <label htmlFor='slider'>Games Played {value}</label>
+          <div className='heading'>
+            <h2>Kitchen Table Tracker</h2>
+          </div>
+          <div className='filters'>
+            <div className='slider'>
+              <label htmlFor='slider'>Minimum Games Played: {value}</label>
               <input
                 id='slider'
                 type='range'
                 min={0}
-                max={50}
+                max={30}
                 value={value}
                 onChange={(e) => setValue(parseInt(e.target.value))}
               ></input>
-      
-              <div className='pie-chart'></div>
             </div>
+          </div>
+          <Legend threshold={value}></Legend>
+          <Pie threshold={value}></Pie>
         </section>
     </>
   )

@@ -1,15 +1,44 @@
-.center {
+.body {
   display: grid;
-  place-items: center;
+  grid-template-columns: 400px auto;
+}
+
+.heading {
+  border: solid 1px gray;
+  margin: 16px;
+  padding-left: 64px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slider {
+  display: grid;
+  width: 200px;
+}
+
+.legend-item {
+  width: 280px;
+  height: 40px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.pie-chart-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.pie-chart-label {
+  width: 200px;
+  margin: 8px;
 }
 
 .pie-chart {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: conic-gradient(
-    #4e79a7 0% 40%,    /* Slice 1: 40% */
-    #f28e2c 40% 70%,   /* Slice 2: 30% (40% + 30% = 70%) */
-    #e15759 70% 100% 
-  );
 }
