@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
 import Pie from './components/Pie';
-import Legend from './components/Legend'
+import Legend from './components/Legend';
+import History from './components/History';
+
 
 function App() {
   const [value, setValue] = useState(30);
@@ -25,8 +27,11 @@ function App() {
               ></input>
             </div>
           </div>
+
+          <div></div>
           <Legend threshold={value}></Legend>
           <Pie threshold={value}></Pie>
+          <History></History>
         </section>
     </>
   )

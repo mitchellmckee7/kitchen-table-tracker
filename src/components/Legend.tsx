@@ -1,14 +1,6 @@
 import history from "../assets/games.json";
 import "../App.css";
-
-interface Game {
-  id: number;
-  players: string[];
-  winner: number;
-  seatOrder: boolean;
-  date: string;
-  length: number;
-}
+import type { Game } from "../models/IGame";
 
 type Props = {
   threshold: number;
@@ -54,7 +46,7 @@ const colors = [
               backgroundColor: colors[index % colors.length],
             }}>
           <div>{player}</div>
-          <span>has a {((gamesPlayed / totalGames) * 100).toFixed(1)}% win rate over {gamesPlayed} games</span>
+          <span>appears in {((gamesPlayed / totalGames) * 100).toFixed(1)}% of games with {gamesPlayed} games</span>
         </div>
       ))}
     </div>

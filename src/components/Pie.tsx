@@ -1,14 +1,6 @@
 import history from "../assets/games.json";
 import "../App.css";
-
-interface Game {
-  id: number;
-  players: string[];
-  winner: number;
-  seatOrder: boolean;
-  date: string;
-  length: number;
-}
+import type { Game } from "../models/IGame";
 
 type Props = {
   threshold: number;

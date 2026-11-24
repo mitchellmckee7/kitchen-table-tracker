@@ -1,6 +1,6 @@
 .body {
   display: grid;
-  grid-template-columns: 400px auto;
+  grid-template-columns: 400px 200px auto;
 }
 
 .heading {
