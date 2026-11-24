@@ -1,5 +1,5 @@
 import history from "../assets/games.json";
-import "../App.css";
+import "../styles/App.css";
 import type { Game } from "../models/IGame";
 
 function Legend( ) {

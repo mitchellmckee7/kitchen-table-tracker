@@ -1,6 +1,7 @@
 import history from "../assets/games.json";
-import "../App.css";
+import "../styles/App.css";
 import type { Game } from "../models/IGame";
+import { Link } from "react-router";
 
 type Props = {
   threshold: number;
@@ -42,12 +43,14 @@ const colors = [
   return (
     <div className="player-legend-container">
       {Object.entries(sortedPlayerStats).map(([player, gamesPlayed], index) => (
-        <div key={player} className="legend-item" style={{
-              backgroundColor: colors[index % colors.length],
-            }}>
-          <div>{player}</div>
-          <span>appears in {((gamesPlayed / totalGames) * 100).toFixed(1)}% of games with {gamesPlayed} games</span>
-        </div>
+        <Link to={`/deck/${player}`}>
+          <div key={player} className="legend-item" style={{
+                backgroundColor: colors[index % colors.length],
+              }}>
+            <div>{player}</div>
+            <span>appears in {((gamesPlayed / totalGames) * 100).toFixed(1)}% of games with {gamesPlayed} games</span>
+          </div>
+        </Link>
       ))}
     </div>
   );

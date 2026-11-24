@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import './App.css';
-import Pie from './components/Pie';
-import Legend from './components/Legend';
-import History from './components/History';
+import '../styles/App.css';
+import Pie from '../components/Pie';
+import Legend from '../components/Legend';
+import History from '../components/History';
+import Filters from '../components/Filters';
 
 
-function App() {
+function Metagame() {
   const [value, setValue] = useState(30);
 
   return (
@@ -16,7 +17,7 @@ function App() {
           </div>
           <div className='filters'>
             <div className='slider'>
-              <label htmlFor='slider'>Minimum Games Played: {value}</label>
+              <Filters value={value}></Filters>
               <input
                 id='slider'
                 type='range'
@@ -30,11 +31,11 @@ function App() {
 
           <div></div>
           <Legend threshold={value}></Legend>
-          <Pie threshold={value}></Pie>
+          <Pie threshold={value}></Pie> 
           <History></History>
         </section>
     </>
   )
 }
 
-export default App
+export default Metagame

@@ -81,8 +81,6 @@ Stores deck information associated with a metagame.
 
 The application follows a serverless architecture using AWS services.
 
-text
-
 ```text
 React Frontend
       |
