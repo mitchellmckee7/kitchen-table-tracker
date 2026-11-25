@@ -43,14 +43,14 @@ const colors = [
   return (
     <div className="player-legend-container">
       {Object.entries(sortedPlayerStats).map(([player, gamesPlayed], index) => (
-        <Link to={`/deck/${player}`}>
-          <div key={player} className="legend-item" style={{
-                backgroundColor: colors[index % colors.length],
-              }}>
-            <div>{player}</div>
-            <span>appears in {((gamesPlayed / totalGames) * 100).toFixed(1)}% of games with {gamesPlayed} games</span>
-          </div>
-        </Link>
+        <div key={player} className="legend-item" style={{
+              backgroundColor: colors[index % colors.length],
+            }}>
+          <Link to={`/deck/${player}`}>{player}
+          </Link>
+          <span>appears in {((gamesPlayed / totalGames) * 100).toFixed(1)}% of games with {gamesPlayed} games</span>
+        </div>
+        
       ))}
     </div>
   );

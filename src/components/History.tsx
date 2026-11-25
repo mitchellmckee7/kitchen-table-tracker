@@ -4,9 +4,10 @@ import type { Game } from "../models/IGame";
 
 function Legend( ) {
   const games:Game[] = history;
-  
+
   return (
     <div className="player-legend-container">
+      <h2>Match History</h2>
       {games.map(game => (
         <div key={game.id} className="legend-item">
           <div>{game.players[game.winner]} won!</div>
