@@ -41,7 +41,7 @@ const colors = [
 ];
 
   return (
-    <div className="player-legend-container">
+    <div className="legend-container">
       {Object.entries(sortedPlayerStats).map(([player, gamesPlayed], index) => (
         <div key={player} className="legend-item" style={{
               backgroundColor: colors[index % colors.length],

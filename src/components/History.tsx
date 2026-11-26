@@ -6,10 +6,10 @@ function Legend( ) {
   const games:Game[] = history;
 
   return (
-    <div className="player-legend-container">
+    <div className="legend-container">
       <h2>Match History</h2>
       {games.map(game => (
-        <div key={game.id} className="legend-item">
+        <div key={game.id} className="match-item">
           <div>{game.players[game.winner]} won!</div>
           <div>Pod: {game.players.toSpliced(game.winner, 1).map(game => game + '; ' )}</div>
         </div>
